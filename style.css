@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+header {
+    width: 100%;
+    height: 10%;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-style: italic;
+    font-size: 3rem;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    z-index: 1;
+}
+
+body::before {
+    content: '';
+    background-image: url('assets/poke-background.jpg');
+    background-size: cover;
+    opacity: 0.7; /* Justera opaciteten här */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+main {
+    width: 80%;
+    height: calc(100% - 10%);
+    display: flex;
+    gap: 1rem;
+    text-align: center;
+}
+
+section {
+    width: 60%;
+    height: 100%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+
+}
+
+select {
+    width: 9rem;
+    height: 1.5rem;
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.buttonContainer {
+    width: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.vs {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+button {
+width: 6rem;
+padding: 0.5rem;
+color: white;
+font-weight: 500;
+background-color: black;
+border-radius: 4px;
+transform: scale(1);
+transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.messages {
+    background-color: rgba(243, 241, 241, 0.7);
+    height: auto;
+    width: 100%;
+    /* padding: 0.5rem; */
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card, #card2 {
+    width: 80%;
+    height: 90%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  img, #text, #stats {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+p {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#text {
+    width: 100%;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    background-color: rgb(229, 226, 226);
+    border-radius: 2px;
+}
+ #stats {
+    width: 100%;
+    height: 12%;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    border-radius: 2px;
+    background-color: rgb(229, 226, 226);
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+ }
+
+ .attackBtn {
+    margin-top: 15px;
+ }
+
+  @keyframes blink {
+    0% { color: black; }
+    50% { color: red; }
+    100% { color: black; }
+}
+
+/* animation för HP-damage */
+.blink {
+    transform: scale(1.1);
+    animation: blink 1s infinite;
+}
+
+.lost {
+    filter: grayscale(0%) brightness(50%) contrast(100%) saturate(90%) hue-rotate(0deg) sepia(0%);
+  }
+
+  @keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes blinkBorder {
+    0% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: rgb(8, 224, 8);
+    }
+    100% {
+        border-color: transparent;
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 1s forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 1s forwards;
+}
+
+.pokemon-card-animation {
+    animation: blinkBorder 1s infinite;
+}
+
+@keyframes slideInTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-top {
+    animation: slideInTop 1s forwards;
+}
