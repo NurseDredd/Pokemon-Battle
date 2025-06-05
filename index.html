@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon Battle</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header><h1><span class="pokemon-title">Pokémon</span> Battle Arena</h1>
+    </header>
+    <main>
+        <section class="firstPokemon">
+      <select name="" class="pokemonDropdown" id="firstDropdown">
+        <option value="">Choose Pokemon</option>
+      </select>
+      <div class="card" id="card">
+        <div id="info"><div>
+          <div id="text"></div>
+        <div id="stats"></div>
+      </div>
+    </section>
+    <div class="buttonContainer">
+    <p class="vs">VS.</p>
+    <button id="compare" class="hidden slide-button">COMPARE</button>
+    <button id="battle" class="hidden slide-button">BATTLE</button>
+    <div class="messages"></div>
+      </div>
+
+    <section class="secondPokemon">
+      <select name="" class="pokemonDropdown" id="secondDropdown">
+        <option value="">Choose Pokemon</option>
+      </select>
+      <div class="card" id="card2">
+        <div id="info2"><div>
+          <div id="text2"></div>
+        <div id="stats2"></div>
+      </div>
+    </section>
+    </main>
+  </body>
+</html>
