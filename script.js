@@ -1,4 +1,3 @@
-
 let statsDisplay = document.querySelector("#stats");
 let firstDropdown = document.querySelector('#firstDropdown');
 let secondDropdown = document.querySelector('#secondDropdown');
@@ -224,7 +223,7 @@ document.querySelectorAll('.pokemonDropdown').forEach((dropdown, index) => {
 
      //Visa ut i DOM
     info.innerHTML = `
-    <img src="${pokemon.imgUrl}" alt="${pokemon.name}" style="height: 300px; width: 300px; background-color:white; border:2px solid black;" />
+    <img src="${pokemon.imgUrl}" alt="${pokemon.name}" style="height: 250px; width: 250px; object-fit: contain; background-color:white; border:2px solid black;" />
      <h3 style=" font-size:2rem; text-align:center;">${pokemon.name}</h3>
      `;
 
@@ -391,11 +390,13 @@ document.addEventListener("click", (event) => {
             window.location.reload();
             });
             
-            // Lägg på ett filter över förlorarkortet
+            // Lägg på ett filter över förlorarkortet och animation på vinnarkortet
             if (pokemonDefender === chosenPokemons[0]) {
                 pokemonCard.classList.add('lost');
+                pokemonCard2.classList.add('winner-animation');
             } else {
                 pokemonCard2.classList.add('lost');
+                pokemonCard.classList.add('winner-animation');
             }
             // Ta bort attack-knappar
             attackBtnOne.style.display = "none";
